@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="//at.alicdn.com/t/font_1065321_029yxvcvtrrl.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
     <link rel="stylesheet" href="./style.css" class="rel">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +18,64 @@
 </head>
     <body>
         <div class="top clearfix">
-            <a class="logo" href="#" alt="logo" style="fload: left;">
-                <span class="rs">RS</span><span class="card">Card</span>
-            </a>
-            <nav>
-                <ul class="clearfix">
+            <div class="topdiv clearfix" style="padding: 0px 16px;">
+                <a class="logo" href="#" alt="logo" style="fload: left;">
+                    <span class="rs">RS</span><span class="card">Card</span>
+                </a>
+                <nav>
+                    <ul class="clearfix">
                     <li><a href="#">关于</a></li>
                     <li><a href="#">技能</a></li>
                     <li><a href="#">工作简历</a></li>
                     <li><a href="#">联系方式</a></li>
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="banner" style="background-image: url(#)"></div>
+        <div class="banner"">
+            <div class="mark"></div>
+        </div>
         <main>
             <div class="card">
-                <div class="picture">
-                        <img src="#" alt="头像">
-                </div>
-                <div class="text">
-                        <span class="welcome">你好</span>
-                        <h1>李仲谦</h1>
-                        <p>前端开发工程师</p>
-                        <hr>
-                        <dl>
-                            <dt>年龄</dt>
-                            <dd>30</dd>
-                            <dt>所在地</dt>
-                            <dd>广州</dd>
-                            <dt>E-mail</dt>
-                            <dd>378928394@qq.com</dd>
-                            <dt>手机</dt>
-                            <dd>13422011279</dd>
-                        </dl>
+                <div class="body clearfix">
+                    <div class="picture">
+                            <img src="./img/avatar.jpg" width="299px" height="347px" alt="头像">
+                    </div>
+                    <div class="text">
+                        <div>
+                            <span class="welcome">你好<span class="square"></span></span>
+                        </div>
+                            <h1>李仲谦</h1>
+                            <p>前端开发工程师</p>
+                            <hr>
+                            <dl>
+                                <dt>年龄</dt>
+                                <dd>30</dd>
+                                <dt>所在地</dt>
+                                <dd>广州</dd>
+                                <dt>E-mail</dt>
+                                <dd>378928394@qq.com</dd>
+                                <dt>手机</dt>
+                                <dd>13422011279</dd>
+                            </dl>
+                    </div>
                 </div>
                 <footer class="media">
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-weibo"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhihu"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-github"></use>
+                            </svg>
+                        </a>
                 </footer>
             </div>
         </main>
