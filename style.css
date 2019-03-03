@@ -330,7 +330,7 @@ section>.title{
 }
 .protfolio>nav>.bar{
     margin-top: 16px;
-    margin-bottom: 1000px;
+    margin-bottom: 30px;
     background: white;
     height: 5px;
     border-radius: 10%; 
@@ -352,4 +352,61 @@ section>.title{
 .protfolio>nav>.bar.state-3>.bar-inne{
     margin-left: 164px;
     width: 37%;
+}
+.protfolio .word{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 576px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.protfolio .word>.big,.small{
+    position: fixed;
+    position: absolute;
+}
+.topbutton{
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+}
+.topbutton> .icon{
+    width: 2.5em;
+    height: 2.5em;
+    fill: #B7B7B7;
+}
+.yanshi{
+    margin-bottom: 50px;
+    position: relative;
+}
+.yanshi>.box{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 176px;
+    overflow: hidden;
+    box-sizing: border-box;
+}   
+.yanshi>.box>a{
+    border: 1px solid white;
+    background: #0605464b;
+    border-radius: 50%;
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    float: left;
+    position: absolute;
+}
+.yanshi>.box>.img1{
+    top: 85%;
+    right: 22%;
+}
+.yanshi>.box>.img2{
+    top: 85%;
+    right: 20%;
+}
+.yanshi>.box>.img3{
+    top: 85%;
+    right: 18%;
 }
