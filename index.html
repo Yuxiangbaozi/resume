@@ -24,19 +24,20 @@
                 </a>
                 <nav>
                     <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
+                    <li><a href="#card">名片</a></li>
+                    <li><a href="#skill">技能</a></li>
+                    <li><a href="#protfolio">作品集</a></li>
                     <li><a href="#">工作简历</a></li>
                     <li><a href="#">联系方式</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="banner"">
-            <div class="mark"></div>
-        </div>
         <main>
-            <div class="card">
+            <div class="banner"">
+                <div class="mark"></div>
+            </div>
+            <div id="card" class="card">
                 <div class="body clearfix">
                     <div class="picture">
                             <img src="./img/avatar.jpg" width="299px" height="347px" alt="头像">
@@ -79,28 +80,46 @@
                 </footer>
             </div>
         </main>
-        <a href="#" class="button">下载PDF简历</a>
-        <p>.........</p>
-        <section>
-            <h2>技能</h2>
-            <ul>
-                <li>HTML 5&CSS</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>Vue</li>
-                <li>React</li>
-                <li>HTTP</li>
+        <p class="downloadcontainer">
+            <a href="./download.PDF" class="button" target="_blank" download>下载PDF简历</a>
+        </p>
+        <p class="text">李仲谦，初级前端工程师
+            <br>技能：HTML&CSS JavaScript Vue Node.js 开发
+        </p>
+        <section id="skill" class="skill">
+            <h2 class="title">技能</h2>
+            <ul class="clearfix">
+                <li>HTML 5&CSS<div class="progressbar1"></div></li>
+                <li>JavaScript<div class="progressbar2"></div></li>
+                <li>jQuery<div class="progressbar3"></div></li>
+                <li>Vue<div class="progressbar4"></div></li>
+                <li>React<div class="progressbar5"></div></li>
+                <li>HTTP<div class="progressbar6"></div></li>
             </ul>
         </section>
-        <section>
-            <h2>作品集</h2>
-            <nav>
+        <section id="protfolio" class="protfolio clearfix">
+            <h2 class="title">作品集</h2>
+            <nav class="clearfix">
                 <ol>
-                    <li>所有</li>
-                    <li>框架</li>
-                    <li>原生JS&amp,CSS</li>
+                    <li id="protfolioAll">所有</li>
+                    <li id="protfolioFramework">框架</li>
+                    <li id="protfolioNative">原生JS&amp,CSS</li>
                 </ol>
+                <div id="protfolioBar" class="bar state-1">
+                    <div class="bar-inne"></div>
+                </div>
             </nav>
+            <script>
+                protfolioAll.onclick= function(){
+                    protfolioBar.className = 'bar state-1'
+                }
+                protfolioFramework.onclick= function(){
+                    protfolioBar.className = 'bar state-2'
+                }
+                protfolioNative.onclick= function(){
+                    protfolioBar.className = 'bar state-3'
+                }
+            </script>
             <div class="job">
                 <div class="big"></div>
                 <div class="small"></div>
