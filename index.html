@@ -3,12 +3,42 @@
     <head>
         <script src="//at.alicdn.com/t/font_1065321_k7ghbzw2sp.js"></script>
         <style type="text/css">
-            .icon {
-            width: 1em; height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
+            .loading{width: 200px; height: 200px; position: relative;}
+            .loading::before,.loading::after{
+                content:'';
+                width:0;
+                height:0;
+                background:black;
+                position: absolute;
+                border-radius:50%;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                margin:auto;
+                animation: load 1.5s linear infinite;
             }
+            .loading::after{animation-delay: 0.75s;}
+
+            @keyframes load{
+                0%{width:0; height:0; opacity:1;}
+                100%{width:80px; height:80px; opacity:0;}
+            }
+            
+            .wload{
+                display: none;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(163, 163, 163);
+                z-index: 1;
+            }
+            .wload.active{display: flex;}
+            
         </style>
         <link rel="stylesheet" href="./style.css" class="rel">
         <meta charset="UTF-8">
@@ -17,7 +47,10 @@
         <title>我的简历</title>
     </head>
     <body>
-        <div class="top clearfix">
+        <div id="wload" class="wload active">
+            <div class="loading"></div>
+        </div>
+        <div id="topnav" class="top clearfix">
             <div class="topdiv clearfix" style="padding: 0px 16px;">
                 <a class="logo" href="#" alt="logo" style="fload: left;">
                     <span class="rs">RS</span><span class="card">Card</span>
@@ -147,5 +180,17 @@
                 <a href="#yanshi3" class="img3"></a>
             </div>
         </div>
+        <script>
+            setTimeout(function(){
+                wload.classList.remove('active')
+            },1500)
+            window.onscroll = function(){
+                if (window.scrollY > 0) {
+                    topnav.classList.add('active')
+                }else{
+                    topnav.classList.remove('active')
+                }
+            }
+        </script>
     </body>
 </html>
