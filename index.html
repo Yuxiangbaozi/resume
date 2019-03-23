@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
     <head>
         <script src="//at.alicdn.com/t/font_1065321_k7ghbzw2sp.js"></script>
         <style type="text/css">
@@ -23,8 +23,8 @@
                 </a>
                 <nav class="nav">
                     <ul class="clearfix">
-                        <li><a class="card" href="#card">名片</a></li>
-                        <li><a href="#skill">技能</a></li>
+                        <li class="subtarget"><a class="card" href="#card">名片</a></li>
+                        <li class="subtarget"><a href="#skill">技能</a></li>
                         <li class="subtarget">
                             <a href="#protfolio">作品集</a>
                             <ul>
@@ -57,7 +57,7 @@
             <div class="banner"">
                 <div class="mark"></div>
             </div>
-            <div id="card" class="card">
+            <div data-x id="card" class="card">
                 <div class="body clearfix">
                     <div class="picture">
                             <img src="./img/avatar.jpg" width="299px" height="347px" alt="头像">
@@ -106,7 +106,7 @@
         <p class="text">李仲谦，初级前端工程师
             <br>技能：HTML&CSS JavaScript Vue Node.js 开发
         </p>
-        <section id="skill" class="skill">
+        <section data-x id="skill" class="skill">
             <h2 class="title">技能</h2>
             <ul class="clearfix">
                 <li>HTML 5&CSS<div class="progressbar1"></div></li>
@@ -117,7 +117,7 @@
                 <li>HTTP<div class="progressbar6"></div></li>
             </ul>
         </section>
-        <section id="protfolio" class="protfolio clearfix">
+        <section data-x id="protfolio" class="protfolio clearfix">
             <h2 class="title">作品集</h2>
             <nav class="clearfix">
                 <ol>
@@ -167,26 +167,64 @@
                 <a href="#yanshi3" class="img3"></a>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
         <script>
             setTimeout(function(){
                 wload.classList.remove('active')
             },1500)
-            window.onscroll = function(){
+            window.onscroll = function(sc){
                 if (window.scrollY > 0) {
                     topnav.classList.add('active')
                 }else{
                     topnav.classList.remove('active')
                 }
+                let stags = document.querySelectorAll('[data-x]')
+                let minindex = 0
+                let mintop = stags[minindex].offsetTop
+                for(i=1; i<stags.length; i++){
+                    let divtop = stags[i].offsetTop
+                    if(Math.abs(divtop - window.scrollY) < Math.abs(mintop - window.scrollY)){
+                    minindex = i
+                    } 
+                }
+                let id = stags[minindex].id
+                let a = document.querySelector('a[href="#' + id + '"]')
+                let li = a.parentNode
+                let allli = li.parentNode.children
+                for( i=0; i<allli.length; i++ ){
+                    allli[i].classList.remove('lighthigh')
+                }
+                li.classList.add('lighthigh')
             }
+            
+            
+            
+            function animate(time) {
+                requestAnimationFrame(animate);
+                TWEEN.update(time);
+            }
+            requestAnimationFrame(animate);
 
             let cad = document.querySelectorAll('nav.nav > ul > li > a')
-            cad[0].onclick = function(cl){
-                cl.preventDefault()
-                let a = cl.currentTarget
-                let href = a.getAttribute('href')
-                let ele = document.querySelector(href)
-                let top = ele.offsetTop
-                window.scrollTo( 0, top-70)
+            for(i=0; i<cad.length; i++){
+                cad[i].onclick = function(cl){
+                    cl.preventDefault()
+                    let a = cl.currentTarget
+                    let href = a.getAttribute('href')
+                    let ele = document.querySelector(href)
+                    let top = ele.offsetTop
+                    let targettop = top -78
+                    let wtop = window.scrollY
+                    let s = targettop - wtop
+                    var coords = { y: wtop }; 
+                    var t = Math.abs((s/100)*300)
+                    if(t>1000){t=1000}
+                    var tween = new TWEEN.Tween(coords)
+                        .to( { y: targettop }, t)
+                        .easing(TWEEN.Easing.Quadratic.InOut)
+                        .onUpdate(function(){window.scrollTo(0,coords.y)})
+                        .start();
+                }
             }
 
             let ats = document.getElementsByClassName('subtarget')
