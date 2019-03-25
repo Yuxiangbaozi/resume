@@ -57,7 +57,7 @@
             <div class="banner"">
                 <div class="mark"></div>
             </div>
-            <div data-x id="card" class="card">
+            <div data-x id="card" class="card ass">
                 <div class="body clearfix">
                     <div class="picture">
                             <img src="./img/avatar.jpg" width="299px" height="347px" alt="头像">
@@ -106,18 +106,18 @@
         <p class="text">李仲谦，初级前端工程师
             <br>技能：HTML&CSS JavaScript Vue Node.js 开发
         </p>
-        <section data-x id="skill" class="skill">
+        <section data-x id="skill" class="skill ass">
             <h2 class="title">技能</h2>
             <ul class="clearfix">
-                <li>HTML 5&CSS<div class="progressbar1"></div></li>
-                <li>JavaScript<div class="progressbar2"></div></li>
-                <li>jQuery<div class="progressbar3"></div></li>
-                <li>Vue<div class="progressbar4"></div></li>
-                <li>React<div class="progressbar5"></div></li>
-                <li>HTTP<div class="progressbar6"></div></li>
+                <li>HTML 5&CSS<div data-y class="progressbar1 pro"></div></li>
+                <li>JavaScript<div data-y class="progressbar2 pro"></div></li>
+                <li>jQuery<div data-y class="progressbar3 pro"></div></li>
+                <li>Vue<div data-y class="progressbar4 pro"></div></li>
+                <li>React<div data-y class="progressbar5 pro"></div></li>
+                <li>HTTP<div data-y class="progressbar6 pro"></div></li>
             </ul>
         </section>
-        <section data-x id="protfolio" class="protfolio clearfix">
+        <section data-x id="protfolio" class="protfolio ass clearfix">
             <h2 class="title">作品集</h2>
             <nav class="clearfix">
                 <ol>
@@ -171,33 +171,14 @@
         <script>
             setTimeout(function(){
                 wload.classList.remove('active')
-            },1500)
+            },1000)
+            setTimeout(function(){aaa()},777)
+
             window.onscroll = function(sc){
-                if (window.scrollY > 0) {
-                    topnav.classList.add('active')
-                }else{
-                    topnav.classList.remove('active')
-                }
-                let stags = document.querySelectorAll('[data-x]')
-                let minindex = 0
-                let mintop = stags[minindex].offsetTop
-                for(i=1; i<stags.length; i++){
-                    let divtop = stags[i].offsetTop
-                    if(Math.abs(divtop - window.scrollY) < Math.abs(mintop - window.scrollY)){
-                    minindex = i
-                    } 
-                }
-                let id = stags[minindex].id
-                let a = document.querySelector('a[href="#' + id + '"]')
-                let li = a.parentNode
-                let allli = li.parentNode.children
-                for( i=0; i<allli.length; i++ ){
-                    allli[i].classList.remove('lighthigh')
-                }
-                li.classList.add('lighthigh')
+                if (window.scrollY > 0) { topnav.classList.add('active') }
+                else{ topnav.classList.remove('active') }
+            aaa()
             }
-            
-            
             
             function animate(time) {
                 requestAnimationFrame(animate);
@@ -236,6 +217,31 @@
                     ml.currentTarget.classList.remove('active')
                 }
             }
+
+            function aaa(){
+                let stags = document.querySelectorAll('[data-x]')
+                let minindex = 0
+                let mintop = stags[minindex].offsetTop
+                for(let i=1; i<stags.length; i++){
+                    let divtop = stags[i].offsetTop
+                    if(Math.abs(divtop - window.scrollY) < Math.abs(mintop - window.scrollY)){
+                    minindex = i
+                    }
+                }
+                stags[minindex].classList.remove('ass')
+                let stagsy = document.querySelectorAll('[data-y]')
+                if(minindex === 1){
+                    for( let n=0; n<stagsy.length; n++){stagsy[n].classList.remove('pro')}
+                }
+                let id = stags[minindex].id
+                let a = document.querySelector('a[href="#' + id + '"]')
+                let li = a.parentNode
+                let allli = li.parentNode.children
+                for( i=0; i<allli.length; i++ ){
+                    allli[i].classList.remove('lighthigh')
+                }
+                li.classList.add('lighthigh')
+                }
         </script>
     </body>
 </html>
