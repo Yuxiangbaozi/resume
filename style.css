@@ -498,7 +498,7 @@ div[data-y].pro::before{
     cursor: pointer;
     position: fixed;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 .yanshi>.but1{
     top: 85%;
@@ -522,9 +522,11 @@ div[data-y].pro::before{
 }
 .yanshi>.box>img.cur{
     transform: translateX(0);
+    z-index: 1;
 }
 .yanshi>.box>img.end{
     transform: translateX(-100%);
+    z-index: 1;
 }
 .yanshi>.box>img.ready{
     transform: translateX(100%);
