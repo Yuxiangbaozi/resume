@@ -488,9 +488,6 @@ div[data-y].pro::before{
     box-sizing: border-box;
     position: relative;
 }
-.yanshi>.box{
-    transition: 0.8s;
-}
 .yanshi>button{
     border: 1px solid white;
     background: #0605464b;
@@ -521,6 +518,7 @@ div[data-y].pro::before{
 .yanshi>.box>img{
     position: fixed;
     position: absolute;
+    transition: 0.8s;
 }
 .yanshi>.box>img.cur{
     transform: translateX(0);
