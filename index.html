@@ -2,9 +2,8 @@
 <html lang="zh-Hans">
     <head>
         <script src="//at.alicdn.com/t/font_1065321_k7ghbzw2sp.js"></script>
+        <script src="./jquery-3.3.1.js"></script>
         <style type="text/css">
-            
-            
         </style>
         <link rel="stylesheet" href="./style.css" class="rel">
         <meta charset="UTF-8">
@@ -18,7 +17,7 @@
         </div>
         <div id="topnav" class="top clearfix">
             <div class="topdiv clearfix" style="padding: 0px 16px;">
-                <a class="logo" href="#" alt="logo" style="fload: left;">
+                <a class="logo" href="#" alt="logo">
                     <span class="rs">RS</span><span class="card">Card</span>
                 </a>
                 <nav class="nav">
@@ -159,89 +158,15 @@
         </a>
         <div class="yanshi">
             <div class="box clearfix">
-                <img src="./img/lb1.jpg" alt="演示1" id="yanshi1">
-                <img src="./img/lb2.jpg" alt="演示2" id="yanshi2">
-                <img src="./img/lb3.jpg" alt="演示3" id="yanshi3">
-                <a href="#yanshi1" class="img1"></a>
-                <a href="#yanshi2" class="img2"></a>
-                <a href="#yanshi3" class="img3"></a>
+                <img src="./img/lb1.jpg" alt="演示1" id="yanshi1" class="cur">
+                <img src="./img/lb2.jpg" alt="演示2" id="yanshi2" class="ready">
+                <img src="./img/lb3.jpg" alt="演示3" id="yanshi3" class="end">
             </div>
+            <button class="but1" id="1"></button>
+            <button class="but2" id="2"></button>
+            <button class="but3" id="3"></button>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
-        <script>
-            setTimeout(function(){
-                wload.classList.remove('active')
-            },1000)
-            setTimeout(function(){aaa()},777)
-
-            window.onscroll = function(sc){
-                if (window.scrollY > 0) { topnav.classList.add('active') }
-                else{ topnav.classList.remove('active') }
-            aaa()
-            }
-            
-            function animate(time) {
-                requestAnimationFrame(animate);
-                TWEEN.update(time);
-            }
-            requestAnimationFrame(animate);
-
-            let cad = document.querySelectorAll('nav.nav > ul > li > a')
-            for(i=0; i<cad.length; i++){
-                cad[i].onclick = function(cl){
-                    cl.preventDefault()
-                    let a = cl.currentTarget
-                    let href = a.getAttribute('href')
-                    let ele = document.querySelector(href)
-                    let top = ele.offsetTop
-                    let targettop = top -78
-                    let wtop = window.scrollY
-                    let s = targettop - wtop
-                    var coords = { y: wtop }; 
-                    var t = Math.abs((s/100)*300)
-                    if(t>1000){t=1000}
-                    var tween = new TWEEN.Tween(coords)
-                        .to( { y: targettop }, t)
-                        .easing(TWEEN.Easing.Quadratic.InOut)
-                        .onUpdate(function(){window.scrollTo(0,coords.y)})
-                        .start();
-                }
-            }
-
-            let ats = document.getElementsByClassName('subtarget')
-            for(let i=0; i<ats.length; i++){
-                ats[i].onmouseenter = function(me){
-                    me.currentTarget.classList.add('active')
-                }
-                ats[i].onmouseleave = function(ml){
-                    ml.currentTarget.classList.remove('active')
-                }
-            }
-
-            function aaa(){
-                let stags = document.querySelectorAll('[data-x]')
-                let minindex = 0
-                let mintop = stags[minindex].offsetTop
-                for(let i=1; i<stags.length; i++){
-                    let divtop = stags[i].offsetTop
-                    if(Math.abs(divtop - window.scrollY) < Math.abs(mintop - window.scrollY)){
-                    minindex = i
-                    }
-                }
-                stags[minindex].classList.remove('ass')
-                let stagsy = document.querySelectorAll('[data-y]')
-                if(minindex === 1){
-                    for( let n=0; n<stagsy.length; n++){stagsy[n].classList.remove('pro')}
-                }
-                let id = stags[minindex].id
-                let a = document.querySelector('a[href="#' + id + '"]')
-                let li = a.parentNode
-                let allli = li.parentNode.children
-                for( i=0; i<allli.length; i++ ){
-                    allli[i].classList.remove('lighthigh')
-                }
-                li.classList.add('lighthigh')
-                }
-        </script>
+        <script src="./main.js"></script>
     </body>
 </html>
