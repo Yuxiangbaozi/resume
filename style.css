@@ -489,7 +489,7 @@ div[data-y].pro::before{
     position: relative;
 }
 .yanshi>.box{
-    transition: 0.3s
+    transition: 0.8s;
 }
 .yanshi>button{
     border: 1px solid white;
