@@ -526,8 +526,8 @@ div[data-y].pro::before{
 }
 .yanshi>.box>img.end{
     transform: translateX(-100%);
-    z-index: 1;
 }
 .yanshi>.box>img.ready{
     transform: translateX(100%);
+    z-index: -1;
 }
