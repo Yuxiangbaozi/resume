@@ -14,7 +14,7 @@ body{background: #efefef; margin: 0;}
 a{text-decoration: none;}
 *{ margin: 0;padding: 0;}
 hr{height: 0; border: 0; border-top: 1px solid #dedede;}
-.loading{width: 200px; height: 200px; position: relative;}
+.loading{width: 200px; height: 200px; position: relative; z-index: 2;}
 .loading::before,.loading::after{content:''; width:0; height:0; background:black; position: absolute; 
     border-radius:50%; left:0; right:0; top:0; bottom:0; margin:auto; animation: load 1.5s linear infinite;}
 .loading::after{animation-delay: 0.75s;}
@@ -505,7 +505,6 @@ div[data-y].pro::before{
     z-index: 1;
 }
 .yanshi>.box>img{
-    position: fixed;
     left: 0;
     top: 0;
     position: absolute;
@@ -513,7 +512,6 @@ div[data-y].pro::before{
 }
 .yanshi>.box>img.cur{
     transform: translateX(0);
-    z-index: 1;
 }
 .yanshi>.box>img.end{
     transform: translateX(-100%);
