@@ -44,7 +44,7 @@ section[data-x].ass{
     left: 0;
     width: 100%;
     transition: padding linear 0.3s, background 0.3s, box-shadow 0.3s, color 0.01s;
-    z-index: 1;
+    z-index: 2;
 }
 .top.active{
     padding: 15px 0px;
@@ -456,18 +456,6 @@ div[data-y].pro::before{
     margin-left: 164px;
     width: 37%;
 }
-.protfolio .word{
-    max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 576px;
-    position: relative;
-    margin-bottom: 100px;
-}
-.protfolio .word>.big,.small{
-    position: fixed;
-    position: absolute;
-}
 .topbutton{
     position: fixed;
     bottom: 30px;
@@ -480,13 +468,14 @@ div[data-y].pro::before{
 }
 .yanshi{
     margin-bottom: 50px;
-    width: 1200px;
+    width: 940px;
     margin-left: auto;
     margin-right: auto;
-    height: 176px;
+    height: 705px;
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
+    box-shadow: 0px 0px 13px 2px rgba(148,148,148,1);
 }
 .yanshi>button{
     border: 1px solid white;
@@ -517,6 +506,8 @@ div[data-y].pro::before{
 }
 .yanshi>.box>img{
     position: fixed;
+    left: 0;
+    top: 0;
     position: absolute;
     transition: 0.8s;
 }
@@ -530,4 +521,24 @@ div[data-y].pro::before{
 .yanshi>.box>img.ready{
     transform: translateX(100%);
     z-index: -1;
+}
+.massage>#massageList{
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.massage>#massageList>li{
+    padding: 15px;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+}
+.massage>#massageList>li:last-child{
+    border-bottom: 2px solid #bbb;
+}
+.massage>#massageList>li:first-child{
+    border-top: 2px solid #bbb;
+}
+#postmas{
+    width: 700px;
+    margin: 50px auto;
 }
