@@ -5,7 +5,7 @@
     },1000)
     setTimeout(function(){aaa()},777)
     /********************Load画面**************************/
-    window.onscroll = function(sc){
+    window.onscroll = function(){
         if (window.scrollY > 0) { topnav.classList.add('active') }
         else{ topnav.classList.remove('active') }
     aaa()

@@ -22,8 +22,6 @@
         from : null,
         init : function(view){
             this.view = view
-            this.mas = view.querySelector('#massageList')
-            this.from = view.querySelector('.massage > #postmas')
             this.initAV()
             this.loadmassages()
             this.bindEvents()
@@ -39,7 +37,9 @@
                 array.forEach((item) => {
                     let li = document.createElement('li')
                     li.innerText = `${item.name}: ${item.content}`
-                    this.mas.appendChild(li)
+                    let mas = view.querySelector('#massageList')
+                    mas.appendChild(li)
+                    
                 });
             }).then(function(todos) {
                 // 更新成功
@@ -48,19 +48,22 @@
             });
         },
         bindEvents : function(){
-            this.from.addEventListener('submit', (s) => {
+            let from = view.querySelector('#postmas')
+            from.addEventListener('submit', (s) => {
                 s.preventDefault()
                 this.save.call()
             })
         },
         save : function(){
-            var content = this.from.querySelector('input[name=content]').value
-            var name = this.from.querySelector('input[name=name]').value
+            var content = view.querySelector("input[name='content']").value
+            var name = view.querySelector("input[name='name']").value
             modle.save(name,content).then((item) => {
                 let li = document.createElement('li')
                 li.innerText = `${item.attributes.name}: ${item.attributes.content}`
-                this.mas.appendChild(li)
-                from.querySelector('input[name=content]').value = ''
+                let mas = view.querySelector('#massageList')
+                mas.appendChild(li)
+                view.querySelector('input[name=content]').value = ''
+                
             })
         }
     }
