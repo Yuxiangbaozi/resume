@@ -11,7 +11,7 @@
 }
 ul,ol{list-style: none;}
 body{background: #efefef; margin: 0;}
-a{text-decoration: none;}
+a{text-decoration: none; color: #028DEA}
 *{ margin: 0;padding: 0;}
 hr{height: 0; border: 0; border-top: 1px solid #dedede;}
 .loading{width: 200px; height: 200px; position: relative; z-index: 2;}
@@ -145,6 +145,7 @@ section[data-x].ass{
     100%{margin-right: 0;}
 }
 
+/*******************************************************/
 .top .logo{
     font-size: 24px;
     font-family: "Arial Black";
@@ -156,19 +157,26 @@ section[data-x].ass{
 .top .logo .card{
     color: #bbb;
 }
+
+/*******************************************************/
 main>.banner{
+    min-width: 955px;
     height: 515px;
     background-image: url(./img/wallhaven-zmzddj.jpg);
     background-position: center center;
     background-size: cover;
 }
 main>.banner .mark{
+    min-width: 955px;
     height: 515px;
     background: rgba(0,0,0,0.5);
 }
+
+/*******************************************************/
 main>.card{
     margin-top: -350px;
-    max-width: 940px;
+    min-width: 955px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     background-color: #eee;
@@ -210,6 +218,7 @@ main>.card{
 }
 .card .body .text hr{
     margin: 20px 0px;
+    border-top: 1px solid #bebebe;
 }
 .card .body .text dl dt,
 .card .body .text dl dd{
@@ -246,6 +255,8 @@ main>.card{
 .card .media a:hover{
     background: rgb(76, 70, 155);
 }
+
+/*******************************************************/
 .downloadcontainer{
     text-align: center;
     margin: 35px 0 45px 0;
@@ -266,15 +277,19 @@ main>.card{
 .downloadcontainer .button:hover{
     box-shadow: 0px 6px 15px 0px rgba(148,148,148,1);
 }
+
+/*******************************************************/
 body>.text{
-    max-width: 940px;
+    min-width: 955px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     line-height: 1.8;
 }
 section>.title{
-    max-width: 940px;
+    min-width: 955px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -285,15 +300,18 @@ section>.title{
     font-weight: 600;
     padding-bottom: 32px;
 }
+
+/*******************************************************/
 .skill,
 .protfolio{
-    max-width: 940px;
+    min-width: 955px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     
 }
 .skill>ul{
-    background-color: #fff;
+    background-color: #eee;
     box-shadow: 0px 0px 13px 2px rgba(148,148,148,1);
     padding: 28px 50px 40px;
 }
@@ -317,212 +335,161 @@ div[data-y].pro::before{
     left: -100%;
 }
 .skill>ul>li>.progressbar1{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar1::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 87%;
     position: absolute;
 }
 .skill>ul>li>.progressbar2{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar2::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 80%;
     position: absolute;
 }
 .skill>ul>li>.progressbar3{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar3::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 60%;
     position: absolute;
 }
 .skill>ul>li>.progressbar4{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar4::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 70%;
     position: absolute;
 }
 .skill>ul>li>.progressbar5{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar5::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 67%;
     position: absolute;
 }
 .skill>ul>li>.progressbar6{
-    background: #FBE0E1;
+    background: rgb(224, 230, 251);
     height: 3px;
-    border: 1px solid #FBE0E1;
+    border: 1px solid rgb(224, 230, 251);
     position: relative;
     border-radius: 20%;
 }
 .skill>ul>li>.progressbar6::before{
     content: "";
     border-radius: 30%;
-    border: 1px solid #e6686a;
-    background: #e6686a;
+    border: 1px solid #6B66BA;
+    background: #6B66BA;
     height: 1px;
     width: 50%;
     position: absolute;
 }
+
+/*******************************************************/
 .protfolio{
     text-align: center;
 }
-.protfolio>nav{
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-}
-.protfolio>nav>ol{
-    display: inline-block;
-    vertical-align: top;
-}
-.protfolio>nav>ol>li{
-    margin-left: 50px;
-    float: left;
-    cursor: pointer;
-}
-.protfolio>nav>ol>li:first-child{
-    margin-left: 0;
-}
-.protfolio>nav>.bar{
-    margin-top: 16px;
-    margin-bottom: 30px;
-    background: white;
-    height: 5px;
-    border-radius: 10%; 
-}
-.protfolio>nav>.bar>.bar-inne{
-    height: 100%;
-    background: #e6686a;
-    border-radius: 10%;
-    transition: all 0.5s; 
-}
-.protfolio>nav>.bar.state-1>.bar-inne{
-    margin-left: 0px;
-    width: 13%;
-}
-.protfolio>nav>.bar.state-2>.bar-inne{
-    margin-left: 82px;
-    width: 13%;
-}
-.protfolio>nav>.bar.state-3>.bar-inne{
-    margin-left: 164px;
-    width: 37%;
-}
-.topbutton{
-    position: fixed;
-    bottom: 30px;
-    right: 40px;
-}
-.topbutton> .icon{
-    width: 2.5em;
-    height: 2.5em;
-    fill: #B7B7B7;
-}
-.yanshi{
-    margin-bottom: 50px;
-    width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 705px;
-    overflow: hidden;
-    box-sizing: border-box;
-    position: relative;
+.protfolio .project{
+    background-color: #eee;
     box-shadow: 0px 0px 13px 2px rgba(148,148,148,1);
+    padding: 28px 50px 40px 50px;
+    display: flex;
+    flex-direction: column;
+    
 }
-.yanshi>button{
-    border: 1px solid white;
-    background: #0605464b;
-    border-radius: 50%;
+.protfolio .project .wrapper{
+    display: flex;
+    
+}
+.protfolio .project hr{
+    border: 1px solid #bebebe;
+    margin: 10px 0 25px 0;
+}
+.protfolio .project .wrapper img{
+    width: 160px;
+    height: 120px;
+}
+.protfolio .project .wrapper .content{
+    margin-left: 10px; 
+    text-align: start;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.protfolio .project .wrapper .content>h3{
+    color: #6B66BA;
+}
+.protfolio .project .wrapper .content b{
+    color: #6B66BA;
+    font-size: 18px;
+}
+.protfolio .project .wrapper .content button{
+    height: 30px;
+    font-size: 20px;
+    margin-right: 30px; 
+    margin-top: 25px; 
     vertical-align: top;
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
-    position: fixed;
-    position: absolute;
-    z-index: 2;
 }
-.yanshi>.but1{
-    top: 85%;
-    right: 22%;
+.protfolio .project .wrapper .content div{
+    height: 30px;
+    font-size: 20px; 
+    vertical-align: top;
+    color: #e6686a
 }
-.yanshi>.but2{
-    top: 85%;
-    right: 20%;
+.protfolio .project .wrapper .content button>a{
+    margin: 5px 10px;
+    color: brown;
 }
-.yanshi>.but3{
-    top: 85%;
-    right: 18%;
-}
-.topbutton{
-    z-index: 1;
-}
-.yanshi>.box>img{
-    left: 0;
-    top: 0;
-    position: absolute;
-    transition: 0.8s;
-}
-.yanshi>.box>img.cur{
-    transform: translateX(0);
-}
-.yanshi>.box>img.end{
-    transform: translateX(-100%);
-}
-.yanshi>.box>img.ready{
-    transform: translateX(100%);
-    z-index: -1;
-}
+
+/*******************************************************/
 .massage>#massageList{
-    width: 940px;
+    min-width: 955px;
+    max-width: 960px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -540,4 +507,19 @@ div[data-y].pro::before{
 #postmas{
     width: 700px;
     margin: 50px auto;
+}
+
+/*******************************************************/
+.topbutton{
+    z-index: 1;
+}
+.topbutton{
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+}
+.topbutton> .icon{
+    width: 2.5em;
+    height: 2.5em;
+    fill: #B7B7B7;
 }

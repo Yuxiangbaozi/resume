@@ -1,4 +1,4 @@
-!function(){
+(function(){
     /********************Load画面**************************/
     setTimeout(function(){
         wload.classList.remove('active')
@@ -23,19 +23,22 @@
             cl.preventDefault()
             let a = cl.currentTarget
             let href = a.getAttribute('href')
-            let ele = document.querySelector(href)
-            let top = ele.offsetTop
-            let targettop = top -78
-            let wtop = window.scrollY
-            let s = targettop - wtop
-            var coords = { y: wtop }; 
-            var t = Math.abs((s/100)*300)
-            if(t>1000){t=1000}
-            var tween = new TWEEN.Tween(coords)
-                .to( { y: targettop }, t)
-                .easing(TWEEN.Easing.Quadratic.InOut)
-                .onUpdate(function(){window.scrollTo(0,coords.y)})
-                .start();
+            if(!/https:/i.test(href)){
+                let ele = document.querySelector(href)
+                let top = ele.offsetTop
+                let targettop = top -78
+                let wtop = window.scrollY
+                let s = targettop - wtop
+                var coords = { y: wtop }; 
+                var t = Math.abs((s/100)*300)
+                if(t>1000){t=1000}
+                var tween = new TWEEN.Tween(coords)
+                    .to( { y: targettop }, t)
+                    .easing(TWEEN.Easing.Quadratic.InOut)
+                    .onUpdate(function(){window.scrollTo(0,coords.y)})
+                    .start();
+                
+            }
         }
     }
     function aaa(){
@@ -62,4 +65,4 @@
         }
         li.classList.add('lighthigh')
     }
-}.call()
+}.call())

@@ -1,4 +1,4 @@
-!function(){
+(function(){
     let n
     初始化()
     var timeID = setInterval( () => {
@@ -74,4 +74,4 @@
         ready($(`.box > img:nth-child(2)`))
         ready($(`.box > img:nth-child(3)`))
     }
-}.call()
+}.call())

@@ -7,7 +7,22 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
         <link rel="stylesheet" href="./style.css" class="rel">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+                const WIDTH = 755 //不加px
+                const mobileAdapter = ()=> {
+                  let scale = screen.width/WIDTH
+                  let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
+                  let meta = document.querySelector('meta[name=viewport]')
+                  if(!meta){
+                    meta = document.createElement('meta')
+                    meta.setAttribute('name','viewport')
+                    document.head.appendChild(meta)
+                  }
+                  meta.setAttribute('content', content)
+                }
+                mobileAdapter() //执行函数
+                window.onorientationchange = mobileAdapter //旋转屏幕重新校正
+            </script>
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>我的简历</title>
     </head>
@@ -24,15 +39,7 @@
                     <ul class="clearfix">
                         <li class="subtarget"><a class="card" href="#card">名片</a></li>
                         <li class="subtarget">
-                            <a href="https://www.zhihu.com/people/baozi-42-7/posts">博客</a>
-                        </li>
-                        <li class="subtarget">
-                            <a href="#protfolio">作品集</a>
-                            <ul>
-                                <li>作品1</li>
-                                <li>作品2</li>
-                                <li>作品3</li>
-                            </ul>
+                            <a href="#protfolio">个人项目</a>
                         </li>
                         <li class="subtarget"><a href="#skill">技能</a></li>
                         
@@ -62,7 +69,7 @@
                             <span class="welcome">你好<span class="square"></span></span>
                         </div>
                         <h1>李仲谦</h1>
-                        <p>前端开发工程师</p>
+                        <p>求职意向：前端开发工程师，本地广州</p>
                         <hr>
                         <dl>
                             <dt>年龄</dt>
@@ -91,55 +98,66 @@
             </div>
         </main>
         <p class="downloadcontainer">
-            <a href="./download.PDF" class="button" target="_blank" download>下载PDF简历</a>
+            <a href="./我的简历.PDF" class="button" target="_blank" download>下载PDF简历</a>
         </p>
-        <p class="text">1年前端开发经验，熟悉Vue技术栈，熟练模块化，工程化开发流程，
-            <br>掌握Webpack配置，熟练使用ES6写代码，有小程序、移动端开发经验。
+        <p class="text">
+            <i>1年前端开发经验，熟悉<b>Vue</b>技术栈，熟练模块化，工程化开发流程，</i>，
+            <br><i>掌握<b>Webpack</b>配置，熟练使用<b>ES6</b>写代码，有小程序、移动端开发经验。</i>
         </p>
         
         <section data-x id="protfolio" class="protfolio ass clearfix">
             <h2 class="title">个人项目</h2>
-            <nav class="clearfix">
-                <ol>
-                    <li id="protfolioAll">所有</li>
-                    <li id="protfolioFramework">框架</li>
-                    <li id="protfolioNative">原生JS&amp,CSS</li>
-                </ol>
-                <div id="protfolioBar" class="bar state-1">
-                    <div class="bar-inne"></div>
+            <div class="project">
+                <div class="wrapper">
+                    <img src="./img/p1.jpg">
+                    <div class="content">
+                        <h3>便携画板(Mobile adaptation)</h3>
+                        <p>该项目以<b>原生JS</b>框架搭建，搭载了<b>移动端适配</b>技术，同时支持手机端和电脑端。</p>
+                        <p>技术栈：<b>原生JS,ES6,移动端</b></p>
+                        <button><a href="https://yuxiangbaozi.github.io/canvas/index.html">预览</a></button><button><a href="https://github.com/Yuxiangbaozi/canvas">Code</a></button>
+                    </div>
                 </div>
-            </nav>
-            <script>
-                protfolioAll.onclick= function(){
-                    protfolioBar.className = 'bar state-1'
-                }
-                protfolioFramework.onclick= function(){
-                    protfolioBar.className = 'bar state-2'
-                }
-                protfolioNative.onclick= function(){
-                    protfolioBar.className = 'bar state-3'
-                }
-            </script>
-            <div class="yanshi">
-                <div class="box clearfix">
-                    <img src="./img/lb1.png" alt="演示1" id="yanshi1" class="cur">
-                    <img src="./img/lb2.jpg" alt="演示2" id="yanshi2" class="ready">
-                    <img src="./img/lb3.jpg" alt="演示3" id="yanshi3" class="end">
+                <hr>
+                <div class="wrapper">
+                    <img src="./img/p2.png">
+                    <div class="content">
+                        <h3>仿生Cnode社区搭建</h3>
+                        <p>该项目是利用<b>Vue-cil</b>脚手架搭建的一个多人在线社区平台，项目共分为<b>八个组件</b>，其中涉及的大量的<b>内置指令</b>和<b>自定义事件</b>绑定和触发，使用<b>单向数据流</b>传递数据，并利用<b>watch</b>监听<b>vue-router</b>的跳转。</p>
+                        <p>技术栈：<b>Vue,Vuex,Vue-router,ES6,Parcel</b></p>
+                        <button><a href="https://yuxiangbaozi.github.io/cnode/dist/index.html">预览</a></button><button><a href="https://github.com/Yuxiangbaozi/cnode">Code</a></button>
+                    </div>
                 </div>
-                <button class="but1" id="1"></button>
-                <button class="but2" id="2"></button>
-                <button class="but3" id="3"></button>
+                <hr>
+                <div class="wrapper">
+                    <img src="./img/p3.png">
+                    <div class="content">
+                        <h3>造轮子：UIFrame</h3>
+                        <p>该项目是<b>Vue</b>框架搭建的大型造轮子项目中的一环，它的目的主要是为其他项目提供技术支持。在我负责的<b>八大组件</b>开发中，考虑到兄弟组件之间，父子组件之间之间通讯的复杂性，我<b>摒弃</b>了Vue常用的<b>双向绑定</b>和<b>单向数据流</b>模式，首创使用了<b>发布-订阅</b>的开发模式，通过注入eventBus来传递各组件的数据，大大提高代码的易读性和维护性</p>
+                        <p>技术栈：<b>Vue,Vuex,Vue-router,eventBus,ES6,Vuepress</b></p>
+                        <button><a href="https://yuxiangbaozi.github.io/UIframe/">预览</a></button><button><a href="https://github.com/Yuxiangbaozi/UIframe">Code</a></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="wrapper">
+                    <img src="./img/miniclock.jpg">
+                    <div class="content">
+                        <h3>微信小程序：miniclock</h3>
+                        <p>该项目是<b>微信开发</b>的一个小工具，我在开发期间，对主要的功能进行<b>分类抽离</b>并<b>封装成组件</b>，并通过首页数据接入api，实现一键登录功能。</p>
+                        <p>技术栈：<b>微信web开发,JS,ES6,移动端</b></p>
+                        <div><<--扫描二维码立刻查看</div><button><a href="https://github.com/Yuxiangbaozi/miniclock">Code</a></button>
+                    </div>
+                </div>
             </div>
         </section>
         <section data-x id="skill" class="skill ass">
             <h2 class="title">技能</h2>
             <ul class="clearfix">
                 <li>HTML 5&CSS<div data-y class="progressbar1 pro"></div></li>
-                <li>JavaScript<div data-y class="progressbar2 pro"></div></li>
-                <li>jQuery<div data-y class="progressbar3 pro"></div></li>
-                <li>Vue<div data-y class="progressbar4 pro"></div></li>
-                <li>React<div data-y class="progressbar5 pro"></div></li>
-                <li>HTTP<div data-y class="progressbar6 pro"></div></li>
+                <li>JavaScript/ES6/jQuery<div data-y class="progressbar2 pro"></div></li>
+                <li>SVG/Scss/Babel<div data-y class="progressbar3 pro"></div></li>
+                <li>Vue/Vuex/Vue-router<div data-y class="progressbar4 pro"></div></li>
+                <li>Webpack/Parcel<div data-y class="progressbar5 pro"></div></li>
+                <li>Node.js<div data-y class="progressbar6 pro"></div></li>
             </ul>
         </section>
         <section class="massage">
