@@ -1,14 +1,14 @@
-!function(){
-    var view = document.querySelector('section.massage')
+(function(){
+    let view = document.querySelector('section.massage')
 
-    var modle = {
+    let modle = {
         find : function(){
-            var Massage = new AV.Query('Massage');
+            let Massage = new AV.Query('Massage');
             return Massage.find()
         },
         save : function(name,content){
-            var Massage = AV.Object.extend('Massage');
-            var massage = new Massage();
+            let Massage = AV.Object.extend('Massage');
+            let massage = new Massage();
             return massage.save({
                 'name': name,
                 'content': content
@@ -16,7 +16,7 @@
         }
     }
 
-    var control = {
+    let control = {
         view : null,
         mas : null,
         from : null,
@@ -27,8 +27,8 @@
             this.bindEvents()
         },
         initAV : function(){
-            var APP_ID = 'ntxaCMSoh5fq2ckzp5LgpS33-gzGzoHsz'
-            var APP_KEY = 'rIEI9qygRxXr1BYmFiSGF2gI'
+            let APP_ID = '1YOGzkMHmL8wI05XyeRfbxga-MdYXbMMI'
+            let APP_KEY = 'iLmfTXArKmB3P4RQ7Q9RPubt'
             AV.init({ appId: APP_ID , appKey: APP_KEY });
         },
         loadmassages : function(){
@@ -51,12 +51,14 @@
             let from = view.querySelector('#postmas')
             from.addEventListener('submit', (s) => {
                 s.preventDefault()
-                this.save.call()
+                if(view.querySelector('input[name=content]').value !== ''){
+                    this.save.call()
+                }
             })
         },
         save : function(){
-            var content = view.querySelector("input[name='content']").value
-            var name = view.querySelector("input[name='name']").value
+            let content = view.querySelector("input[name='content']").value
+            let name = view.querySelector("input[name='name']").value
             modle.save(name,content).then((item) => {
                 let li = document.createElement('li')
                 li.innerText = `${item.attributes.name}: ${item.attributes.content}`
@@ -69,4 +71,4 @@
     }
 
     control.init(view)
-}.call()
+}.call())

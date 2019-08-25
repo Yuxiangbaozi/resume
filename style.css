@@ -86,7 +86,7 @@ section[data-x].ass{
     left: 0;
     height: 3px;
     width: 100%;
-    background: #e06567;
+    background: rgb(177, 173, 236);
     animation: tit 0.2s linear;
 }
 .topdiv>nav>ul>li.lighthigh>a::after,.topdiv>nav>ul>li:hover>a::after{
@@ -132,7 +132,7 @@ section[data-x].ass{
     left: 0;
     height: 3px;
     width: 100%;
-    background: #e06567;
+    background: rgb(177, 173, 236);
     animation: tit 0.2s linear;
 }
 .topdiv>nav>ul>li>ul>li:hover::after{
@@ -151,14 +151,14 @@ section[data-x].ass{
 }
 .top .logo>.rs{
     margin: 3px;
-    color: orange;
+    color: rgb(177, 173, 236);
 }
 .top .logo .card{
     color: #bbb;
 }
 main>.banner{
     height: 515px;
-    background-image: url(./img/wallpicture.jpg);
+    background-image: url(./img/wallhaven-zmzddj.jpg);
     background-position: center center;
     background-size: cover;
 }
@@ -171,12 +171,13 @@ main>.card{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    background-color: #eee;
     box-shadow: 0px 0px 13px -3px rgba(148,148,148,1);
 }
 .card .text .welcome{
     display: inline-block;
-    background-color: #E8676B;
+    background-color: #6B66BA;
+    color: whitesmoke;
     padding: 4px 19px;
     line-height: 21px;
     position: relative;
@@ -185,7 +186,7 @@ main>.card{
     display: block;
     width: 0px;
     border: 10px solid transparent;
-    border-left-color: #E8676B;
+    border-left-color: #6B66BA;
     border-top-width: 0px;
     position: absolute;
     left: 5px;
@@ -195,6 +196,7 @@ main>.card{
     float: left;
 }
 .card .text{
+    color: #6B66BA;
     float: left;
     padding-left: 64px;
     width: 470px;
@@ -217,15 +219,14 @@ main>.card{
 .card .body .text dl dt{
     width: 30%;
     font-weight: bold;
-    
 }
 .card .body .text dl dd{
+    color: rgb(177, 173, 236);
     width: 70%;
-    color: #9da0a7;
 }
 .card .media{
     text-align: center;
-    background: #E8676B;
+    background: #6B66BA;
     padding: 10px 0;
 }
 .card .media a{
@@ -243,7 +244,7 @@ main>.card{
     vertical-align: top;
 }
 .card .media a:hover{
-    background: #cf5d5f;
+    background: rgb(76, 70, 155);
 }
 .downloadcontainer{
     text-align: center;
