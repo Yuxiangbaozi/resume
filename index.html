@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./style.css" class="rel">
         <meta charset="UTF-8">
         <script>
-                const WIDTH = 755 //不加px
+                const WIDTH = 630 //不加px
                 const mobileAdapter = ()=> {
                   let scale = screen.width/WIDTH
                   let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
@@ -19,6 +19,12 @@
                     document.head.appendChild(meta)
                   }
                   meta.setAttribute('content', content)
+
+                  let style = document.querySelector('link[rel="stylesheet"]')  //设备检测，匹配第二套css
+                  let content2 = "./style-phone.css"
+                  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){//设备检测
+                    style.setAttribute('href', content2)
+                  }
                 }
                 mobileAdapter() //执行函数
                 window.onorientationchange = mobileAdapter //旋转屏幕重新校正
@@ -62,7 +68,7 @@
             <div data-x id="card" class="card ass">
                 <div class="body clearfix">
                     <div class="picture">
-                            <img src="./img/avatar.png" width="299px" height="347px" alt="头像">
+                        <img src="./img/avatar.png"  alt="头像">
                     </div>
                     <div class="text">
                         <div>

@@ -203,6 +203,10 @@ main>.card{
 .card .picture{
     float: left;
 }
+.card .picture img{
+    width: 299px;
+    height: 347px;
+}
 .card .text{
     color: #6B66BA;
     float: left;
@@ -505,7 +509,8 @@ div[data-y].pro::before{
     border-top: 2px solid #bbb;
 }
 #postmas{
-    width: 700px;
+    text-align: center;
+    min-width: 700px;
     margin: 50px auto;
 }
 

@@ -64,8 +64,8 @@
                 li.innerText = `${item.attributes.name}: ${item.attributes.content}`
                 let mas = view.querySelector('#massageList')
                 mas.appendChild(li)
+                view.querySelector('input[name=name]').value = ''
                 view.querySelector('input[name=content]').value = ''
-                
             })
         }
     }
